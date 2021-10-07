@@ -1,1 +1,1 @@
-# JavascriptCourse2021
+# Javascript Course 2021 (Udemy)
