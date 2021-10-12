@@ -36,5 +36,24 @@ for (let index = 0; index < itemsOdd.length; index++) {
 //parentElement
 
 var itemList = document.querySelector('#items');
-console.log(itemList.parentElement);
 itemList.parentElement.style.backgroundColor = '#fff5f5';
+
+//Elementos y nodos Hijos.
+var itemList = document.querySelector('#items');
+//childNodes
+console.log(itemList.childNodes);
+
+//children
+console.log(itemList.children);
+
+//firstChild
+//firstElementChild
+console.log(itemList.firstChild);
+console.log(itemList.firstElementChild);
+itemList.firstElementChild.textContent = 'Javascript';
+
+
+//lastChild
+console.log(itemList.lastChild);
+console.log(itemList.lastElementChild);
+itemList.lastElementChild.textContent = 'Net Core';
