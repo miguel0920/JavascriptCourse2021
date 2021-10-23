@@ -101,7 +101,7 @@ console.log(ageES6Example2);
 
 
 //ES5
-const cuadradoES5 = function CuadradoES5(num){
+const cuadradoES5 = function CuadradoES5(num) {
     return num * num;
 }
 
@@ -135,7 +135,7 @@ const people = [
     }
 ]
 
-const personES5 = people.filter(function(person){
+const personES5 = people.filter(function (person) {
     return person.Age < 18
 })
 
@@ -143,3 +143,70 @@ console.log(personES5);
 
 const personES6 = people.filter((person) => person.Age >= 18);
 console.log(personES6);
+
+
+//Destructuración
+
+//ES5
+var productsES5 = ['Manzana', 1000];
+console.log(productsES5[0]);
+console.log(productsES5[1]);
+
+//ES6
+var [productES6, priceES6] = ['Pera', 2000];
+console.log(productES6);
+console.log(priceES6);
+
+var colors = {
+    Color: 'white',
+    Property: '#fff'
+}
+
+var { Color: c, Property: p } = colors;
+console.log(c);
+console.log(p);
+
+//Example destructuring
+
+var PersonOfLegalAge = (year) => {
+    let age = new Date().getFullYear() - year;
+    let isOlder = age >= 18;
+    return [age, isOlder];
+};
+
+var [agePerson, isOlder] = PersonOfLegalAge(2010);
+console.log(agePerson);
+console.log(`The person is older ${isOlder}`);
+
+
+//ES6 => Map
+
+let data = new Map();
+data.set('Nombre', 'Pedro');
+data.set('Apellido', 'Cardenas');
+data.set(1, 3135115478);
+
+let nombrePerson = data.get('Nombre');
+console.log(nombrePerson);
+
+//data.delete(1);
+//data.clear();
+
+data.forEach((value, key) => {
+    console.log(`${key} : ${value}`);
+});
+
+//Spread Operator.
+
+let sum = (a, b, c, d) => a + b + c + d;
+
+let result = sum(10, 20, 30, 40);
+console.log(result);
+
+let values = [10, 20, 30, 40];
+console.log(sum(...values));
+
+let Doctors = ['Angel', 'Pablo', 'Ricardo'];
+let Engineers = ['Miguel', 'Eduar', 'Mario'];
+let company = [...Doctors, ...Engineers];
+console.log(company);

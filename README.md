@@ -11,5 +11,7 @@ El siguiente repositorio contiene una serie de carpetas en las cuales se aprende
 4. Funciones
 5. Arreglos-Objetos
 6. DOM
+7. Ejemplos ES5 y ES6.
+8. Objetos
 
 **Nota:** No es necesario instalar algún paquete.
