@@ -13,5 +13,6 @@ El siguiente repositorio contiene una serie de carpetas en las cuales se aprende
 6. DOM
 7. Ejemplos ES5 y ES6.
 8. Objetos
+9. POO
 
 **Nota:** No es necesario instalar algún paquete.
