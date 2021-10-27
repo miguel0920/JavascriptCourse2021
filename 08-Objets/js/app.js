@@ -43,7 +43,7 @@ let bookB = {
     Published: 2020
 }
 
-let BookInformation = (book)=>{
+let BookInformation = (book) => {
     return {
         resum: `${book.Title} fue creado por ${book.Author}`,
         resumPages: `${book.Title} tiene ${book.Pages} páginas`
@@ -63,7 +63,7 @@ let product = {
     Name: 'Milk',
     Price: 1500,
     message: () => console.log(`Product: Milk`),
-    changePrice: function(value){
+    changePrice: function (value) {
         this.Price = this.Price + value;
     }
 }
@@ -84,3 +84,58 @@ console.log(`remove word space: ${nameUser.trim()}`);
 console.log(`include word: ${password.includes('@')}`);
 console.log(`include word: ${password.includes('Claves')}`);
 console.log(`include word with length: ${password.includes('Clave', 4)}`);
+
+//Destructuring of complex objects
+
+const response = {
+    codigo: 200,
+    informacion: {
+        nombre: 'Pablo',
+        direccion: {
+            ciudad: 'Bogotá D.C.',
+            pais: 'Colombia'
+        }
+    }
+}
+
+let { codigo, informacion: { nombre, direccion: { ciudad, pais } } } = response;
+console.log(`Destructuring of complex objects: ${ciudad}`);
+
+const responseArray = [
+    {
+        code: 200,
+        data: {
+            name: 'Pablo',
+            address: {
+                city: 'Bogotá D.C.',
+                country: 'Colombia'
+            }
+        }
+    },
+    {
+        code: 300,
+        data: {
+            name: 'Michael',
+            address: {
+                city: 'New Yord',
+                country: 'EEUU'
+            }
+        }
+    },
+    {
+        code: 400,
+        data: {
+            name: 'Maria',
+            address: {
+                city: 'Ciudad de Mexico',
+                country: 'Mexico'
+            }
+        }
+    }
+]
+
+let { code, data: { name, address: { city, country } } } = responseArray[0];
+
+for(const { code, data: { name, address: { city, country } } } of responseArray){
+    console.log(`Destructuring of complex objects 2: ${name}`);
+}
