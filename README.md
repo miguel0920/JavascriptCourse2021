@@ -14,5 +14,6 @@ El siguiente repositorio contiene una serie de carpetas en las cuales se aprende
 7. Ejemplos ES5 y ES6.
 8. Objetos
 9. POO
+10. Array ES6
 
 **Nota:** No es necesario instalar algún paquete.
