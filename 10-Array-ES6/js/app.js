@@ -110,3 +110,21 @@ const searchEatExample = eatsExample.filter((value) => {
 })
 
 console.log(searchEatExample);
+
+
+//Sort object
+//Ref: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+console.log(eatsExample);
+
+eatsExample.sort((code, name) => {
+    if (code.name > name.name) {
+        return 1;
+    }
+    if (code.name < name.name) {
+        return -1;
+    }
+    // a must be equal to b
+    return 0;
+});
+
+console.log(eatsExample);

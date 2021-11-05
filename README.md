@@ -15,5 +15,11 @@ El siguiente repositorio contiene una serie de carpetas en las cuales se aprende
 8. Objetos
 9. POO
 10. Array ES6
+11. LocalStorage
+12. Collection Books
 
-**Nota:** No es necesario instalar algún paquete.
+**Nota:** utilizar el comando al momento de construir la aplicación. 
+
+```bash 
+npm ci
+```
