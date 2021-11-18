@@ -8,14 +8,32 @@ class Book {
 
 class UI {
     static showBook() {
-
+        let books = Data.GetAllBooks();
+        books.forEach((book) => this.addBookList(book));
     }
 
-    static removeBook(id) {
-
+    static removeBook(e) {
+        if (e.classList.contains('delete')) {
+            const isbn = e.parentElement.previousElementSibling.textContent;
+            Data.deleteBook(isbn);
+            e.parentElement.parentElement.remove();
+            UI.viewAlert('Libro eliminado correctamente.', 'success');
+        }
     }
 
-    static addBook(book = Book){
+    static addBookList(book = Book) {
+        let bookList = document.getElementById('libro-list');
+        let row = document.createElement('tr');
+        row.innerHTML = `
+        <td>${book.title}</td>
+        <td>${book.author}</td>
+        <td>${book.isbn}</td>
+        <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
+        `;
+        bookList.appendChild(row);
+    }
+
+    static addBook(book = Book) {
         Data.insertBook(book);
     }
 
@@ -47,7 +65,7 @@ class Data {
         if (booksBD === null) {
             books = [];
         }
-        else{
+        else {
             books = JSON.parse(booksBD);
         }
         return books;
@@ -59,11 +77,21 @@ class Data {
         localStorage.setItem('books', JSON.stringify(books));
     }
 
-    static deleteBook() {
-
+    static deleteBook(isbn) {
+        let listBooks = this.GetAllBooks();
+        listBooks.forEach((book, index) => {
+            if (book.isbn === isbn) {
+                listBooks.splice(index, 1);
+            }
+        });
+        localStorage.setItem('books', JSON.stringify(listBooks));
     }
 }
 
+//Controlar carga de la página para agregar visualizar libros
+document.addEventListener('DOMContentLoaded', UI.showBook());
+
+// Controlar el evento Submit
 document.querySelector('#libro-form').addEventListener('submit', submitBook);
 
 function submitBook(e) {
@@ -77,6 +105,10 @@ function submitBook(e) {
     } else {
         let book = new Book(title, author, isbn);
         UI.addBook(book);
+        UI.addBookList(book);
         UI.cleanFields();
+        UI.viewAlert('Libro creado correctamente.', 'success');
     }
 }
+
+document.querySelector('#libro-list').addEventListener('click', (e) => UI.removeBook(e.target));
