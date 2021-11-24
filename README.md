@@ -17,6 +17,8 @@ El siguiente repositorio contiene una serie de carpetas en las cuales se aprende
 10. Array ES6
 11. LocalStorage
 12. Collection Books
+13. Fechas
+14. Javascript-Async
 
 **Nota:** utilizar el comando al momento de construir la aplicación. 
 
