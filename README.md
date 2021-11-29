@@ -19,8 +19,17 @@ El siguiente repositorio contiene una serie de carpetas en las cuales se aprende
 12. Collection Books
 13. Fechas
 14. Javascript-Async
+15. Firebase
+16. Código seguro vs inseguro javascript
+
+Requerimientos:
+---------------
+La sección de Firebase en la app.js se encuentra una variables llamada "firebaseConfig", 
+donde se requiere ingresar la configuración del firebase de su cuenta al crear un sitio web.
 
 **Nota:** utilizar el comando al momento de construir la aplicación. 
+
+
 
 ```bash 
 npm ci
